@@ -40,10 +40,10 @@ class TestModelPerson(TestCase):
         max_length = person._meta.get_field('last_name').max_length
         self.assertEqual(max_length, 30)
 
-    def test_check_first_upper_letter(self):
+    def test_check_first_title_letter(self):
         person = Person.objects.get(id=1)
-        self.assertEqual(person.name, person.name.upper())
-        self.assertEqual(person.last_name, person.last_name.upper())
+        self.assertEqual(person.name, person.name.title()())
+        self.assertEqual(person.last_name, person.last_name.title()())
 
     def test_date_label(self):
         person = Person.objects.get(id=1)
