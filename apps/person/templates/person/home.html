@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Home page</title>
+
+    <style type="text/css">
+        * {
+
+            margin: 0;
+            padding: 0;
+            color:  #3d3d29;
+
+        }
+
+        body {
+            background: linear-gradient( #bbb, transparent 1px), linear-gradient( 90deg, #bbb, transparent 1px);
+            background-size: 10px 10px;
+            background-position: center center;
+        }
+
+        #content {
+            padding: 20px;
+        }
+
+        #contacts {
+            padding-top: 20px;
+        }
+
+        #contacts > .block {
+            display: inline-block;
+            width: 170px;
+        }
+
+        #contacts > .block > div {
+            padding-bottom: 12px;
+        }
+       #contacts > .block:nth-child(2) {
+            margin-left: 200px;
+        }
+    </style>
+</head>
+<body>
+<div id="content">
+    <h2>42 Coffee Cups Test Assignment</h2>
+
+    <div id="contacts">
+
+        <div class="block">
+            <div>Name: {{data.name}}</div>
+            <div>Last name: {{data.last_name}}</div>
+            <div>Date of birth: {{data.date_of_birth}}</div>
+            <div>Bio:
+                <p>{{data.bio}}</p>
+            </div>
+        </div>
+
+        <div class="block">
+            <div>Contacts: {{data.contacts}}</div>
+            <div>email: {{data.email}}</div>
+            <div>Jabber: {{data.jabber}}</div>
+            <div>Skype: {{data.skype}}</div>
+            <div>Other contacts:
+                <p>{{data.other_contacts}}</p>
+            </div>
+        </div>
+
+    </div>
+</div>
+</body>
+</html>
