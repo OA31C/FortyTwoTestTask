@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Home page</title>
 
     <style type="text/css">
         * {
@@ -48,22 +48,21 @@
     <div id="contacts">
 
         <div class="block">
-            <div>Name: Maxim</div>
-            <div>Last name: Hordiychuck</div>
-            <div>Date of birth: 1997-12-22</div>
+            <div>Name: {{data.name}}</div>
+            <div>Last name: {{data.last_name}}</div>
+            <div>Date of birth: {{data.date_of_birth}}</div>
             <div>Bio:
-                <p>Born in KK, he graduated from school in 2015. He studied in Lutsk.
-                    Hobbies history, programming, guitar.</p>
+                <p>{{data.bio}}</p>
             </div>
         </div>
 
         <div class="block">
-            <div>Contacts: +068*******</div>
-            <div>email: OA3IC.QV@gmail.com</div>
-            <div>Jabber: max_hordiychuck@42cc.co</div>
-            <div>Skype: e9ec196de1ffa713</div>
+            <div>Contacts: {{data.contacts}}</div>
+            <div>email: {{data.email}}</div>
+            <div>Jabber: {{data.jabber}}</div>
+            <div>Skype: {{data.skype}}</div>
             <div>Other contacts:
-                <p>None</p>
+                <p>{{data.other_contacts}}</p>
             </div>
         </div>
 
