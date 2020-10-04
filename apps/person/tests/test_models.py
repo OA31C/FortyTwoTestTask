@@ -20,6 +20,10 @@ class TestModelPerson(TestCase):
             other_contacts='Telegram phone number'
         )
 
+    def test_check_person_in_page(self):
+        person_list = Person.objects.all()
+        self.assertEqual(person_list.count(), 1)
+
     def test_name_label(self):
         person = Person.objects.get(id=1)
         field_label = person._meta.get_field('name').verbose_name
