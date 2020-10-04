@@ -8,8 +8,8 @@ class TestModelPerson(TestCase):
     @classmethod
     def setUpTestData(cls):
         Person.objects.create(
-            name='Max',
-            last_name='Hordiychuck',
+            name='max',
+            last_name='hordiychuck',
             date_of_birth='1997-12-22',
             bio='Born in KK, he graduated from school in 2015. He studied in Lutsk.'
                 'Hobbies history, programming, guitar.',
@@ -17,7 +17,7 @@ class TestModelPerson(TestCase):
             email='OA3IC.QV@gmail.com',
             jabber='max_hordiychuck@42cc.co',
             skype='e9ec196de1ffa713',
-            other_contacts=None
+            other_contacts='Telegram phone number'
         )
 
     def test_name_label(self):
@@ -42,8 +42,8 @@ class TestModelPerson(TestCase):
 
     def test_check_first_title_letter(self):
         person = Person.objects.get(id=1)
-        self.assertEqual(person.name, person.name.title()())
-        self.assertEqual(person.last_name, person.last_name.title()())
+        self.assertEqual(person.name, person.name.title())
+        self.assertEqual(person.last_name, person.last_name.title())
 
     def test_date_label(self):
         person = Person.objects.get(id=1)
@@ -92,7 +92,7 @@ class TestModelPerson(TestCase):
 
     def test_skype_max_length(self):
         person = Person.objects.get(id=1)
-        max_length = person._meta.get_field('contacts').max_length
+        max_length = person._meta.get_field('skype').max_length
         self.assertEqual(max_length, 20)
 
     def test_other_contacts_label(self):
